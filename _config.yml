@@ -42,6 +42,14 @@ algolia:
   powered_by: true # true (default), false
 
 
+# Comments
+comments:
+  provider  : "staticman_v2"
+
+staticman:
+  branch    : "master"
+
+
 # Defaults
 defaults:
   # _posts
@@ -50,7 +58,7 @@ defaults:
       type: posts
     values:
       read_time: true
-
+      comments: true
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes" # theme: minima
