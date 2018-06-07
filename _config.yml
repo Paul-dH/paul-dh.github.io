@@ -1,21 +1,8 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
 title: "Scripting Admins"
-email: paul@den-hertog.net
 name: "Paul den Hertog"
 
 description: >- # this means to ignore newlines until "baseurl:"
@@ -23,22 +10,30 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
+
+# Base and URL settings
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.scriptingadmins.com" # the base hostname & protocol for your site, e.g. http://example.com
 repository: "Paul-dH/paul-dh.github.io"
 
+
+# Pagination
 permalink: /:categories/:title/
 breadcrumbs: true  # disabled by default
-
-search: true
-search_full_content: true
-search_provider: algolia
-
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 
+
+# Locale settings
 locale: "en-US"
-words_per_minute: 200
+timezone: Europe/Amsterdam
+words_per_minute: 190
+
+
+# Search settings
+search: true
+search_full_content: true
+search_provider: algolia
 
 algolia:
   application_id: QHW2XLEHXT
@@ -46,6 +41,8 @@ algolia:
   search_only_api_key: ad0c37e2a347a4b0a180de24e76114da
   powered_by: true # true (default), false
 
+
+# Defaults
 defaults:
   # _posts
   - scope:
@@ -55,31 +52,51 @@ defaults:
       read_time: true
 
 
-# Extra
-twitter_username: # jekyllrb
-github_username:  # jekyll
-
-
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes" # theme: minima
 minimal_mistakes_skin: "air" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
 
 markdown: kramdown
 
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-archives
 
+
+# Site Author
+author:
+  name: "Paul den Hertog"
+  avatar: "/assets/images/paul.jpg"
+  location: "The Netherlands"
+  github: "Paul-dH"
+  linkedin: "pauldh"
 
 
 # Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+clippings: all
