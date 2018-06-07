@@ -37,9 +37,9 @@ search_provider: algolia
 
 algolia:
   application_id: QHW2XLEHXT
-  index_name: index.html # YOUR_INDEX_NAME
+  index_name: scriptingadmins.com
   search_only_api_key: ad0c37e2a347a4b0a180de24e76114da
-  powered_by: true # true (default), false
+  powered_by: true
 
 
 # Category archives
