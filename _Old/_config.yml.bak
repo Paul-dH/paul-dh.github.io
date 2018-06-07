@@ -1,0 +1,49 @@
+# Site wide configuration
+
+title:            Scripting Admins
+locale:           en_US
+url:              https://www.scriptingadmins.com
+
+# Jekyll configuration
+
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+  - jekyll-gist
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+# Site owner
+owner:
+  name: Paul den Hertog
+  avatar: bio.png
+  bio: ""
+  email:
+  disqus-shortname: 
+  twitter: 
+  google:
+    analytics: 
+  bing-verify:
+  github: 
+  stackoverflow: 
+  linkedin: 
+  technet: 
+  wordpress: 
+  rss: feed.xml
+  #Github repos in sidebar - match them up to the repository name...
+  # githubrepos: [
+  #        "AppVReporting",
+  #        "SecretServer"]
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
