@@ -13,6 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
 title: "Scripting Admins"
 email: paul@den-hertog.net
 name: "Paul den Hertog"
@@ -26,10 +27,34 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.scriptingadmins.com" # the base hostname & protocol for your site, e.g. http://example.com
 repository: "Paul-dH/paul-dh.github.io"
 
+permalink: /:categories/:title/
+breadcrumbs: true  # disabled by default
+search: true
+search_provider: algolia
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+
 locale: "en-US"
 
+algolia:
+  application_id: QHW2XLEHXT
+  index_name: index.html # YOUR_INDEX_NAME
+  search_only_api_key: ad0c37e2a347a4b0a180de24e76114da
+  powered_by: true # true (default), false
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      read_time: true
+
+
+# Extra
 twitter_username: # jekyllrb
 github_username:  # jekyll
+
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes" # theme: minima
@@ -39,6 +64,9 @@ markdown: kramdown
 
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
